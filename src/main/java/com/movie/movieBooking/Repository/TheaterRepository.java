@@ -1,5 +1,10 @@
 package com.movie.movieBooking.Repository;
 
-public interface TheaterRepository {
+import java.util.List;
 
+import org.springframework.data.repository.CrudRepository;
+
+import com.movie.movieBooking.Entity.Theater;
+
+public interface TheaterRepository extends CrudRepository<Theater,Integer>{
 }

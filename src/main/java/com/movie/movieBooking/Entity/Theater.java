@@ -24,7 +24,7 @@ public class Theater {
     private String location;
 
     @OneToMany(mappedBy = "theater",cascade = CascadeType.ALL)
-    Set<CinemaHall> CinemaHalls;
+    Set<CinemaHall> cinemaHalls;
 
     public int getId() {
         return id;
@@ -51,13 +51,15 @@ public class Theater {
     }
 
     public Set<CinemaHall> getCinemaHalls() {
-        return CinemaHalls;
+        return cinemaHalls;
     }
 
     public void setCinemaHalls(Set<CinemaHall> cinemaHalls) {
-        CinemaHalls = cinemaHalls;
+        for(CinemaHall hall : cinemaHalls)
+        {
+            hall.setTheater(this);
+        }
+        this.cinemaHalls = cinemaHalls;
     }
-
-    
     
 }
