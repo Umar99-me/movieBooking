@@ -12,7 +12,6 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToMany;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 
 @Entity
 public class Seats {
@@ -30,6 +29,7 @@ public class Seats {
     private CinemaHall hallSeats;
 
     @ManyToMany(mappedBy = "seatsBooked")
+    @JsonIgnore
     private Set<Booking> bookings;
 
     public int getSeatNo() {

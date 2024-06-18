@@ -18,8 +18,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 
 
 @RestController
-@RequestMapping("api")
-public class AppController {
+@RequestMapping("theater")
+public class TheaterController {
 
     @Autowired
     TheaterRepository theaterRepository;
@@ -28,19 +28,19 @@ public class AppController {
     HallRepository hallRepository;
 
     @GetMapping("theaters")
-    public List<Theater> findtheaters() {
+    public List<Theater> findAlltheaters() {
         return (List<Theater>) theaterRepository.findAll();
     }
     
-    @PostMapping("/newTheater")
+    @PostMapping("/theaters")
     public Theater newTheater(@RequestBody Theater theater) {
 
         return theaterRepository.save(theater);
     }
-    @PostMapping("/newHall")
-    public CinemaHall newHall(@RequestBody CinemaHall hall) {
+    // @PostMapping("/newHall")
+    // public CinemaHall newHall(@RequestBody CinemaHall hall) {
 
-        return hallRepository.save(hall);
-    }
+    //     return hallRepository.save(hall);
+    // }
     
 }

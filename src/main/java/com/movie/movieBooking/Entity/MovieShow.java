@@ -85,5 +85,22 @@ public class MovieShow {
         this.movie = movie;
     }
 
+    public CinemaHall getCinemaHall() {
+        return cinemaHall;
+    }
+
+    public void setCinemaHall(CinemaHall cinemaHall) {
+        this.cinemaHall = cinemaHall;
+    }
+
+    public Set<Booking> getBooking() {
+        return booking;
+    }
+
+    public void setBooking(Set<Booking> booking) {
+        this.booking = booking;
+    }
+
+    
 
 }
